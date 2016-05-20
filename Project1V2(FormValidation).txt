@@ -1,0 +1,169 @@
+<!-- 
+Auther/Coder: Quintin Nihcolson
+DateOfCeation: April 25th 2016
+ProjectName: Project1 V2
+Purpose: This is a simple webpage that will allow the user to submit a Ticket for an issue.
+DateLastModified: 5/15/2016 
+NameOfModifier: Quintin Nicholson
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {background-color: lightgrey;}  <!-- Changes the Background to light grey -->
+</style>
+
+  <center><img src="https://www.csra.com/sites/all/themes/sra/logo.png" alt="CSRA Logo"></center>
+  <title>Data Center Support Operations</title>
+  <h1 style="text-align:center;">Submit a Ticket </h1>
+
+</head>
+<body>
+
+<form style="text-align:center;" name="myForm" onsubmit="return validate()" method="post">
+  
+<!-- CUSTOMER ID NUMBER -->
+  <b>Customer ID Number:</b><br>
+  <input type="text" name="customerid"><br><br>
+
+<!-- FIRST NAME -->
+  <b>First name:</b><br>
+  <input type="text" name="firstname"
+   pattern="[a-zA-Z]{1,20}" title="First Name (Letters Only)"><br><br>
+  
+<!-- LAST NAME -->
+  <b>Last name:</b><br>
+  <input type="text" name="lastname"
+   pattern="[a-zA-Z]{1,20}" title="Last Name (Letters Only)"><br><br>
+
+<!-- EMAIL ADDRESS -->
+  <b>Email Address:</b><br>
+  <input type="email" name="email"><br><br>
+
+<!-- CONTACT PHONE NUMBER (DAY) -->
+  <b> 
+    Contact Phone Number (Day):
+  </b><br>
+  <input type="tel" name="daytel" pattern="[0-9]{10}" title="Contact number to call during the day. (3045551234)">
+  <br><br>
+
+<!-- CONTACT PHONE NUMBER (EVENING) -->
+  <b>
+    Contact Phone Number (Evening):
+  </b><br>
+  <input type="tel" name="nighttel" pattern="[0-9]{10}" title="Contact number to call after business hours. (3045551234)">
+  <br><br>
+
+<!-- DATE ISSUE STARTED -->
+  <b>
+    <a data-toggle="tooltip" title="The date the issue started">Date Issue Started:</a>
+  </b><br>
+  <input type="date" name=issuedate"><br><br>
+ 
+<!-- DESCRIPTION OF ISSUE -->
+  <b>Description Of Issue:</b><br>
+  <textarea name="description" rows="5" cols="40"></textarea><br><br>
+
+<!-- IP ADRESS OR DOMAIN -->
+  <b>IP Address Or Domain Name:</b><br>
+  <input type="text" name="ipdomain"><br><br>
+
+<!-- CRITICALITY OF ISSUE -->
+  <b>
+    <a data-toggle="tooltip" title="How severe the issue is">Criticality Of Issue:</a>
+  </b><br>
+  <input type="radio" name="criticality" value="low"> Low   
+  <input type="radio" name="criticality" value="moderate"> Moderate   
+  <input type="radio" name="criticality" value="high"> High <br><br>
+
+<!-- SUBMIT BUTTON -->
+  <input type="submit" value="Submit">
+
+</form>
+
+
+
+<!-- *****JAVASCRIPT***** -->
+<script>    
+  function validate()
+  {
+    var a = document.forms["myForm"]["firstname"].value;
+    var b = document.forms["myForm"]["lastname"].value;
+    var c = document.forms["myForm"]["daytel"].value;
+    var d = document.forms["myForm"]["nighttel"].value;
+    var e = document.forms["myForm"]["customerid"].value;
+    var f = document.forms["myForm"]["email"].value;
+    var g = document.forms["myForm"]["issuedate"].value;
+    var h = document.forms["myForm"]["description"].value;
+    var i = document.forms["myForm"]["ipdomain"].value;
+    var j = document.forms["myForm"]["criticality"].value;
+   
+    if(a == "" || a == null)   <!-- Makes sure First Name is not empty -->
+         {
+            alert( "Please provide your First Name!" );
+            document.myForm.firstname.focus();
+            return false;
+         }
+    if(b == "" || b == null)   <!-- Makes sure Last Name is not empty -->
+         {
+            alert( "Please provide your Last Name!" );
+            document.myForm.lastname.focus();
+            return false;
+         } 
+    if(c == "" || c == null)   <!-- Makes sure Day Phone is not empty -->
+         {
+            alert( "Please provide your Day Time Phone Number!" );
+            document.myForm.daytel.focus();
+            return false;
+         }
+    if(d == "" || d == null)   <!-- Makes sure Night Phone is not empty -->
+         {
+            alert( "Please provide your Night Time Phone Number!" );
+            document.myForm.nighttel.focus();
+            return false;
+         }
+    if(e == "" || e == null)   <!-- Makes sure Customer ID is not empty -->
+         {
+            alert( "Please provide your Customer ID!" );
+            document.myForm.customerid.focus();
+            return false;
+         }
+    if(f == "" || f == null)   <!-- Makes sure Email is not empty -->
+         {
+            alert( "Please provide your Email!" );
+            document.myForm.email.focus();
+            return false;
+         }
+    if(g == "" || g == null)   <!-- Makes sure Issue Date is not empty -->
+         {
+            alert( "Please provide the Issue Date!" );
+            document.myForm.issuedate.focus();
+            return false;
+         }
+    if(h == "" || h == null)   <!-- Makes sure Description is not empty -->
+         {
+            alert( "Please provide a Description of the issue!" );
+            document.myForm.description.focus();
+            return false;
+         }
+    if(i == "" || i == null)   <!-- Makes sure IP Address or Domain is not empty -->
+         {
+            alert( "Please provide your IP Address or Domain Name!" );
+            document.myForm.ipdomain.focus();
+            return false;
+         }
+    if(j == "" || j == null)   <!-- Makes sure Level of Criticality is checked -->
+         {
+            alert( "Please check the level of Criticality!" );
+            return false;
+         }
+
+    alert( "Ticket Submitted!" );
+    return true;
+  } <!-- End Validate() -->
+</script>
+
+</body>
+</html>
