@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ticket>
+    <Customer>
+        <CustomerID>""</CustomerID>
+        <FirstName>""</FirstName>
+        <LastName>""</LastName>
+        <Email>""</Email>
+        <ContactDayNum>""</ContactDayNum>
+        <ContactNightNum>""</ContactNightNum>
+    </Customer>
+    <Issue>
+        <IssueStartDate>""</IssueStartDate>
+        <DescriptionOfIssue>""</DescriptionOfIssue>
+        <IPAddressOrDomain>""</IPAddressOrDomain>
+        <CriticalityOfIssue>""</CriticalityOfIssue>
+    </Issue>
+</Ticket>
